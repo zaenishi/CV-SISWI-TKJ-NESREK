@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pink White CV</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #fff5f8;
+    color: #49313d;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg,#d85f91,#f5a9c8);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    font-size: 27px;
+    letter-spacing: 3px;
+}
+
+header p {
+    margin-top: 7px;
+    font-size: 13px;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    padding: 16px 10px;
+    background: white;
+    box-shadow: 0 4px 15px #d85f9115;
+}
+
+nav button {
+    border: none;
+    background: #fce4ec;
+    color: #c94f83;
+    padding: 11px 17px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+nav button:hover,
+nav button.active {
+    background: #e879a8;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* CONTENT */
+.container {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 15px;
+}
+
+.page {
+    display: none;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px #d85f9118;
+    animation: fade .4s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* HOME */
+.hero {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.photo {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #f8c6d9;
+    background: #fce4ec;
+    margin-bottom: 18px;
+}
+
+.hero h2 {
+    color: #c94f83;
+    font-size: 27px;
+}
+
+.hero p {
+    color: #89717d;
+    margin-top: 12px;
+    line-height: 1.8;
+}
+
+/* TITLES */
+.title {
+    color: #c94f83;
+    border-bottom: 2px solid #f8d5e2;
+    padding-bottom: 13px;
+    margin-bottom: 22px;
+    font-size: 24px;
+}
+
+/* INFORMATION */
+.info {
+    background: #fff3f7;
+    padding: 17px;
+    border-radius: 13px;
+    margin-bottom: 13px;
+    line-height: 1.8;
+    border-left: 4px solid #e879a8;
+}
+
+.info strong {
+    color: #c94f83;
+}
+
+/* SKILLS */
+.skill {
+    margin-bottom: 22px;
+}
+
+.skill strong {
+    color: #70495b;
+}
+
+.bar {
+    height: 11px;
+    background: #fce4ec;
+    border-radius: 20px;
+    margin-top: 9px;
+    overflow: hidden;
+bar div {
+    height: 100%;
+    background: linear-gradient(90deg,#f5a9c8,#c94f83);
+    border-radius: 20px;
+}
+
+/* BUTTON */
+.action {
+    display: inline-block;
+    border: none;
+    background: #e879a8;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 5px;
+    transition: .3s;
+}
+
+.action:hover {
+    background: #c94f83;
+    transform: translateY(-2px);
+}
+
+.navigation-buttons {
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #b77b96;
+    font-size: 13px;
+}
+
+/* MOBILE */
+@media(max-width:600px) {
+    .container {
+        margin: 15px auto;
+        padding: 12px;
+    }
+
+    .page {
+        padding: 22px 18px;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    nav button {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>MY PORTFOLIO</h1>
+    <p>CURRICULUM VITAE • PERSONAL PROFILE</p>
+</header>
+
+<nav>
+    <button class="active" onclick="showPage('home',this)">Home</button>
+    <button onclick="showPage('profil',this)">Profil</button>
+    <button onclick="showPage('pendidikan',this)">Pendidikan</button>
+    <button onclick="showPage('pengalaman',this)">Pengalaman</button>
+    <button onclick="showPage('keahlian',this)">Keahlian</button>
+    <button onclick="showPage('kontak',this)">Kontak</button>
+</nav>
+
+<div class="container">
+
+<!-- HOME -->
+<section id="home" class="page active">
+    <div class="hero">
+        <img src="fotonay.jpg" class="photo" alt="Foto Profil">
+
+        <h2>HELLO, I'M KINAYA GHAIDA ALIFIA</h2>
+
+        <p>
+            Selamat datang di personal portfolio saya.
+            Saya adalah pribadi yang disiplin,
+            kreatif, bertanggung jawab dan memiliki
+            semangat untuk terus belajar.
+        </p>
+
+        <button class="action"
+        onclick="showPage('profil')">
+        Explore My Profile →
+        </button>
+    </div>
+</section>
+
+<!-- PROFIL -->
+<section id="profil" class="page">
+    <h2 class="title">♡ Tentang Saya</h2>
+
+    <div class="info">
+        <strong>Nama Lengkap</strong><br>
+        kinaya Ghaida
+    </div>
+
+    <div class="info">
+        <strong>Tempat, Tanggal Lahir</strong><br>
+        Karawang,14 november 2008
+    </div>
+    <div class="info">
+        <strong>Jenis Kelamin</strong><br>
+        perempuan
+    </div>
+
+    <div class="info">
+        <strong>Alamat</strong><br>
+      warudoyong selatan ,Rt 45 Rw 10 desa rengasdengklok selatan
+    </div>
+
+    <div class="info">
+        <strong>Tentang Saya</strong><br>
+        Saya memiliki kepribadian yang baik,
+        mampu bekerja sama dalam tim,
+        disiplin dan bertanggung jawab.
+    </div>
+</section>
+
+<!-- PENDIDIKAN -->
+<section id="pendidikan" class="page">
+    <h2 class="title">♡ Education</h2>
+
+    <div class="info">
+        <strong>2024 - 2027</strong><br>
+        SMKN 1 RENGASDENGKLOK
+    </div>
+
+    <div class="info">
+        <strong>2021 - 2024</strong><br>
+        SMPN 1 RENGASDEBGKLOK
+    </div>
+
+    <div class="info">
+        <strong>2015 - 2021</strong><br>
+      SDN SELATAN 2
+    </div>
+</section>
+
+<!-- PENGALAMAN -->
+<section id="pengalaman" class="page">
+    <h2 class="title">♡ Experience</h2>
+
+    <div class="info">
+        <strong>Pengalaman Organisasi</strong><br>
+       -
+    </div>
+
+    <div class="info">
+        <strong>Pengalaman Kerja</strong><br>
+        PEMDA KARAWANG 
+    </div>
+
+    <div class="info">
+        <strong>Prestasi dan Sertifikat</strong><br>
+        PROGRAM PAHAM AI 2026
+    </div>
+</section>
+
+<!-- KEAHLIAN -->
+<section id="keahlian" class="page">
+    <h2 class="title">♡ My Skills</h2>
+
+    <div class="skill">
+        <strong>Microsoft Word</strong>
+        <div class="bar">
+            <div style="width:85%"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <strong>Microsoft Excel</strong>
+        <div class="bar">
+            <div style="width:70%"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <strong>Communication</strong>
+        <div class="bar">
+            <div style="width:90%"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <strong>Teamwork</strong>
+        <div class="bar">
+            <div style="width:85%"></div>
+        </div>
+    </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak" class="page">
+    <h2 class="title">♡ Contact Me</h2>
+
+    <div class="info">
+        <strong>Email</strong><br>
+        kinayaghaidaalifia@gmail.com
+    </div>
+
+    <div class="info">
+        <strong>WhatsApp</strong><br>
+        085888245180
+    </div>
+
+    <div class="info">
+        <strong>Instagram</strong><br>
+        @_kinayaghaida.alifia
+    </div>
+
+    <a class="action"
+    href="mailto:kinayaghaidaalifia@gmail.com">
+    Send Email
+    </a>
+</section>
+<div class="navigation-buttons">
+    <button class="action" onclick="previousPage()">← BACK</button>
+    <button class="action" onclick="nextPage()">NEXT →</button>
+    <button class="action" onclick="window.print()">
+        DOWNLOAD PDF
+    </button>
+</div>
+
+</div>
+
+<footer>
+    ♡ 2026 MY PINK PORTFOLIO ♡
+    <br>Made with Love
+</footer>
+
+<script>
+
+const pages = [
+    'home',
+    'profil',
+    'pendidikan',
+    'pengalaman',
+    'keahlian',
+    'kontak'
+];
+
+let current = 0;
+
+function showPage(id, btn) {
+    current = pages.indexOf(id);
+
+    document.querySelectorAll('.page').forEach(p => {
+        p.classList.remove('active');
+    });
+
+    document.getElementById(id).classList.add('active');
+
+    document.querySelectorAll('nav button').forEach(b => {
+        b.classList.remove('active');
+    });
+
+    if(btn) {
+        btn.classList.add('active');
+    } else {
+        document.querySelectorAll('nav button').forEach(b => {
+            if(b.getAttribute('onclick').includes("'" + id + "'")) {
+                b.classList.add('active');
+            }
+        });
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+function nextPage() {
+    current = (current + 1) % pages.length;
+    showPage(pages[current]);
+}
+
+function previousPage() {
+    current = (current - 1 + pages.length) % pages.length;
+    showPage(pages[current]);
+}
+
+</script>
+
+</body>
+</html>
