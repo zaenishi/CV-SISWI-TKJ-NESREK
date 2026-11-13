@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Gold Portfolio</title>
+
+<style>
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family:Arial,sans-serif;
+    background:#f8f7f3;
+    color:#292929;
+}
+
+:root {
+    --gold:#bd984b;
+    --light:#f5eddc;
+    --white:#fff;
+}
+
+header {
+    height:75px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 8%;
+    border-bottom:1px solid #e8d9b6;
+}
+
+.logo {
+    color:var(--gold);
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.menu {
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.menu button {
+    border:none;
+    background:none;
+    color:#555;
+    cursor:pointer;
+    font-size:13px;
+    padding:10px;
+}
+
+.menu button:hover,
+.menu button.active {
+    color:var(--gold);
+}
+
+.page {
+    display:none;
+    min-height:calc(100vh - 145px);
+    padding:65px 9%;
+    animation:fade .4s ease;
+}
+
+.page.active {
+    display:block;
+}
+
+@keyframes fade {
+    from {opacity:0; transform:translateY(12px)}
+    to {opacity:1; transform:translateY(0)}
+}
+
+.home {
+    background:linear-gradient(120deg,#fff,#f4ead3);
+    display:none;
+    align-items:center;
+    justify-content:space-around;
+    gap:35px;
+    flex-wrap:wrap;
+    min-height:calc(100vh - 145px);
+}
+
+.home.active {
+    display:flex;
+}
+
+.home-text {
+    max-width:480px;
+}
+
+.home-text small {
+    color:var(--gold);
+    letter-spacing:4px;
+    font-weight:bold;
+}
+
+.home-text h1 {
+    font-size:45px;
+    margin:20px 0;
+    line-height:1.2;
+}
+
+.home-text h1 span {
+    color:var(--gold);
+}
+
+.home-text p {
+    color:#777;
+    line-height:1.8;
+}
+
+.photo {
+    width:260px;
+    height:320px;
+    border:5px solid var(--gold);
+    border-radius:140px 140px 15px 15px;
+    overflow:hidden;
+    background:#eee4d0;
+}
+.photo img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.btn {
+    display:inline-block;
+    padding:13px 24px;
+    margin-top:25px;
+    background:var(--gold);
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn:hover {
+    background:#92702d;
+    transform:translateY(-3px);
+}
+
+.title {
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title small {
+    color:var(--gold);
+    letter-spacing:4px;
+}
+
+.title h2 {
+    font-size:32px;
+    margin:12px;
+}
+
+.line {
+    width:60px;
+    height:3px;
+    background:var(--gold);
+    margin:auto;
+}
+
+.content {
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    line-height:2;
+    color:#666;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+}
+
+.card {
+    background:white;
+    padding:30px 25px;
+    border-radius:12px;
+    border:1px solid #e9ddc4;
+    box-shadow:0 8px 25px #00000008;
+    transition:.3s;
+    text-align:left;
+}
+
+.card:hover {
+    transform:translateY(-6px);
+    border-color:var(--gold);
+}
+
+.card h3 {
+    color:var(--gold);
+    margin-bottom:12px;
+}
+
+.card p {
+    color:#777;
+    line-height:1.8;
+}
+.skill {
+    margin:25px auto;
+    max-width:650px;
+    text-align:left;
+}
+
+.bar {
+    height:10px;
+    background:#eee;
+    border-radius:20px;
+    margin-top:10px;
+    overflow:hidden;
+}
+
+.bar span {
+    display:block;
+    height:100%;
+    background:linear-gradient(90deg,#bd984b,#ead69f);
+}
+
+.contact-box {
+    text-align:center;
+    line-height:2.5;
+}
+
+footer {
+    background:#29261f;
+    color:white;
+    padding:25px;
+    text-align:center;
+    font-size:13px;
+}
+
+footer span {
+    color:#d4b15c;
+}
+
+.back {
+    display:block;
+    margin:0 auto 30px;
+    padding:10px 18px;
+    border:1px solid var(--gold);
+    color:#9d792e;
+    background:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+@media(max-width:650px) {
+    header {
+        height:auto;
+        padding:18px 10px;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .menu {
+        justify-content:center;
+        gap:2px;
+    }
+
+    .menu button {
+        font-size:11px;
+        padding:8px;
+    }
+
+    .home {
+        text-align:center;
+        padding:55px 20px;
+    }
+
+    .home-text h1 {
+        font-size:35px;
+    }
+
+    .photo {
+        width:220px;
+        height:270px;
+    }
+
+    .page {
+        padding:50px 20px;
+    }
+}
+
+@media print {
+    header,footer,.back,.btn {
+        display:none;
+    }
+    .page.active,.home.active {
+        display:block;
+    }
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MY PORTFOLIO.</div>
+
+    <nav class="menu">
+        <button class="active" onclick="showPage('home',this)">Home</button>
+        <button onclick="showPage('about',this)">Profil</button>
+        <button onclick="showPage('education',this)">Pendidikan</button>
+        <button onclick="showPage('experience',this)">Pengalaman</button>
+        <button onclick="showPage('skills',this)">Keahlian</button>
+        <button onclick="showPage('contact',this)">Kontak</button>
+    </nav>
+</header>
+
+<!-- HOME -->
+<div class="home active" id="home">
+
+    <div class="home-text">
+        <small>WELCOME TO MY WEBSITE</small>
+        <h1>Halo, Saya <span>CARISA ARYANI</span></h1>
+        <p>
+            Selamat datang di personal portfolio saya.
+            Temukan informasi tentang profil, pendidikan,
+            pengalaman, serta keahlian saya.
+        </p>
+
+        <button class="btn" onclick="showPage('about')">
+            Mulai Jelajahi →
+        </button>
+    </div>
+
+    <div class="photo">
+        <img src=".jpg"
+        alt="Foto Profil">
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section class="page" id="about">
+    <div class="title">
+        <small>INTRODUCTION</small>
+        <h2>Tentang Saya</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="content">
+        <p>
+            Perkenalkan, nama saya <b>Carisa Aryani</b>.
+            Saya adalah pribadi yang disiplin,
+            bertanggung jawab, kreatif dan memiliki
+            semangat tinggi untuk terus belajar.
+        </p>
+        <br>
+        <p>Nama: Carisa aryani</p>
+        <p>Tempat, Tanggal Lahir: Karawang, 11 Agustus 2008</p>
+        <p>Alamat: Bojong Tugu II RT.018/RW.004 Desa.Rengasdengklok Selatan Kec.Rengasdengklok Kab.Karawang</p>
+        <p>Email: crsllvyn@gmail.com</p>
+        <p>No. HP: 085811368872</p>
+
+        <br>
+        <label class="btn" for="uploadPhoto">
+            Ganti Foto
+        </label>
+        <input type="file" id="uploadPhoto"
+        accept="image/*" hidden>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="page" id="education">
+    <div class="title">
+        <small>MY JOURNEY</small>
+        <h2>Pendidikan</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>SD</h3>
+            <p>SDN DEWISARI II</p>
+            <p>2015 - 2021</p>
+        </div>
+
+        <div class="card">
+            <h3>SMP</h3>
+            <p>SMPN 1 KUTAWALUYA</p>
+            <p>2021 - 2024</p>
+        </div>
+
+        <div class="card">
+            <h3>SMA / SMK</h3>
+            <p>SMKN 1 RENGASDENVKLOK jurusan Teknik Jaringan Komputer dan Tekomunikasi</p>
+            <p>2024 - 2027</p>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="page" id="experience">
+    <div class="title">
+        <small>MY EXPERIENCE</small>
+        <h2>Pengalaman</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Organisasi</h3>
+            <p>Saya mengikuti eskul Seni Tari di SMK.</p>
+        </div>
+
+        <div class="card">
+            <h3>Pengalaman Kerja</h3>
+            <p>PUSKESMAS RENGASDENGKLOK
+               Oktober 2025 – April 2026
+               Menginput data imunisasi anak.
+               Mendata pasien yang melakukan pemeriksaan.
+               Menginput data keuangan di BLUD.
+               Menginput BKU kas keuangan.
+               Membuat surat keterangan kesehatan (KIR).
+               Bekerja sama dengan tim dalam menyelesaikan pekerjaan./p>
+        </div>
+
+        <div class="card">
+            <h3>Prestasi</h3>
+            <h3>Stava Loka Vest</h3>
+               Juara Harapan 2 tahun 2025
+            <h3>Program Paham AI – Literasi Kecerdasan Artifisial</h3>
+                Periode 2026
+            <h3>Certificate of Appreciation</h3>
+                Periode 2026.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="page" id="skills">
+    <div class="title">
+        <small>MY ABILITY</small>
+        <h2>Keahlian</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="skill">
+        <p>Microsoft Word</p>
+        <div class="bar"><span style="width:85%"></span></div>
+    </div>
+
+    <div class="skill">
+        <p>Microsoft Excel</p>
+        <div class="bar"><span style="width:75%"></span></div>
+    </div>
+
+    <div class="skill">
+        <p>Komunikasi</p>
+        <div class="bar"><span style="width:90%"></span></div>
+    </div>
+
+    <div class="skill">
+        <p>Kerja Sama Tim</p>
+        <div class="bar"><span style="width:88%"></span></div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="page" id="contact">
+    <div class="title">
+        <small>GET IN TOUCH</small>
+        <h2>Kontak Saya</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="contact-box">
+        <p>📧 crsllvyn1@gmail.com</p>
+        <p>📱 085811368872</p>
+        <p>📍 Karawang, Indonesia</p>
+
+        <a href="mailto:emailkamu@gmail.com" class="btn">
+            Kirim Email
+        </a>
+
+        <br>
+        <button class="btn" onclick="window.print()">
+            Cetak / Simpan PDF
+        </button>
+    </div>
+</section>
+
+<footer>
+    ©️ 2026 <span>MY PORTFOLIO</span> | Luxury Gold & White
+</footer>
+
+<script>
+function showPage(id,button) {
+
+    document.querySelectorAll('.home,.page')
+    .forEach(page => page.classList.remove('active'));
+
+    document.getElementById(id).classList.add('active');
+
+    document.querySelectorAll('.menu button')
+    .forEach(btn => btn.classList.remove('active'));
+
+    if(button) {
+        button.classList.add('active');
+    } else {
+        document.querySelectorAll('.menu button')
+        .forEach(btn => {
+            if(btn.getAttribute('onclick').includes(id)) {
+                btn.classList.add('active');
+            }
+        });
+    }
+
+    window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Upload foto profil
+document.getElementById('uploadPhoto')
+.addEventListener('change',function(e) {
+    const file = e.target.files[0];
+
+    if(file) {
+        document.getElementById('profilePhoto').src =
+        URL.createObjectURL(file);
+    }
+});
+</script>
+
+</body>
+</html>
