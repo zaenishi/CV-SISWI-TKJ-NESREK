@@ -1,113 +1,212 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>CV Nani Anggreyani</title>
-<style>
-body {
-  font-family: Arial;
-  background: linear-gradient(blue, #42a5f5);
-  margin: 0;
-  padding: 30px;
-}
-.cv {
-  background: white;
-  max-width: 800px;
-  margin: auto;
-  padding: 25px;
-  border-radius: 15px;
-}
-header {
-  background: #064b9b;
-  color: white;
-  padding: 25px;
-  text-align: center;
-}
-.foto {
-  width: 150px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-button {
-  background: #0878df;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 5px;
-}
-section {
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
-}
-h2 {
-  color: #0755aa;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Nani Anggreyani</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0066cc, #80caff);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        header {
+            text-align: center;
+            background: #0077cc;
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .foto {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #0066cc;
+            border-bottom: 2px solid #66bfff;
+            padding-bottom: 5px;
+        }
+
+        .menu {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        button {
+            background: #0077cc;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #004c99;
+        }
+
+        .isi {
+            display: none;
+            padding: 10px;
+            animation: muncul 0.5s;
+        }
+
+        .aktif {
+            display: block;
+        }
+
+        @keyframes muncul {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            color: gray;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
-<div class="cv">
 
-<header>
-<img src="IMG-20261113-WA0026.jpg"
-class="foto"
-onclick="alert('Foto Nani Anggreyani')">
+<div class="container">
 
-<h1>NANI ANGGREYANI</h1>
-<p>SISWA SMK • CALON TENAGA KERJA INDUSTRI</p>
-<p>Teknik Komputer dan Jaringan</p>
-</header>
+    <header>
+        <label for="uploadFoto">
+            <img src="IMG-20261113-WA0026.jpg" class="foto" id="gambar"
+                 alt="Foto profil Nani Anggreyani">
+        </label>
 
-<section>
-<h2>Profil</h2>
-<p>
-Saya adalah siswa SMK kelas XII jurusan
-Teknik Komputer dan Jaringan.
-Saya memiliki sifat disiplin, bertanggung
-jawab, tepat waktu dan mampu bekerja sama.
-</p>
-</section>
+        <input type="file" id="uploadFoto"
+               accept="image/*" hidden>
 
-<section>
-<h2>Pendidikan</h2>
-<p>SDN Dewisari II (2015-2021)</p>
-<p>SMPN Islam Al-Furqon (2021-2024)</p>
-<p>SMKN 1 Rengasdengklok (2024-2027)</p>
-</section>
+        <h1>NANI ANGGREYANI</h1>
+        <p>SISWA SMK | CALON TENAGA KERJA INDUSTRI</p>
+    </header>
 
-<section>
-<h2>Pengalaman</h2>
-<p>Puskesmas Rengasdengklok (2025-2026)</p>
-<ul>
-<li>Menginput data pasien</li>
-<li>Mencari rekam medis</li>
-<li>Bekerja sama dengan tim</li>
-</ul>
-</section>
+    <div class="menu">
+        <button onclick="buka('profil')">Profil</button>
+        <button onclick="buka('pendidikan')">Pendidikan</button>
+        <button onclick="buka('pengalaman')">Pengalaman</button>
+        <button onclick="buka('keahlian')">Keahlian</button>
+        <button onclick="buka('kontak')">Kontak</button>
+    </div>
 
-<section>
-<h2>Keahlian</h2>
-<ul>
-<li>Bertanggung jawab</li>
-<li>Disiplin</li>
-<li>Tepat waktu</li>
-<li>Kerja sama tim</li>
-</ul>
-</section>
+    <section id="profil" class="isi aktif">
+        <h2>Profil Diri</h2>
+        <p>Halo! Nama saya Nani Anggreyani.
+        Saya merupakan siswi SMK kelas XII jurusan
+        Teknik Komputer dan Jaringan.</p>
 
-<section>
-<h2>Informasi Lain</h2>
-<p>Hobi: Bermain badminton</p>
-<p>Ekstrakurikuler: Seni Tari</p>
-<p>Pelatihan: Program Paham AI</p>
-</section>
+        <p>Saya memiliki sikap disiplin, bertanggung
+        jawab, tepat waktu, dan mampu bekerja sama
+        dalam tim.</p>
 
-<button onclick="window.print()">
-Cetak CV
-</button>
+        <p><b>Hobi:</b> Bermain badminton</p>
+        <p><b>Motto:</b> Bekerja saat usia muda dan
+        menikmati hasil di usia tua adalah impian anak muda.</p>
+    </section>
+
+    <section id="pendidikan" class="isi">
+        <h2>Pendidikan</h2>
+        <p>SDN Dewisari II (2015 - 2021)</p>
+        <p>SMPN Islam Al-Furqon (2021 - 2024)</p>
+        <p>SMKN 1 Rengasdengklok (2024 - 2027)</p>
+        <p>Jurusan: Teknik Komputer dan Jaringan</p>
+    </section>
+
+    <section id="pengalaman" class="isi">
+        <h2>Pengalaman Kerja</h2>
+        <h3>Puskesmas Rengasdengklok</h3>
+        <p>Bagian Rekam Medis (2025 - 2026)</p>
+        <ul>
+            <li>Menginput data pasien.</li>
+            <li>Mencari dan menyusun rekam medis.</li>
+            <li>Bekerja sama dengan tim.</li>
+        </ul>
+    </section>
+
+    <section id="keahlian" class="isi">
+        <h2>Keahlian dan Keterampilan</h2>
+        <ul>
+            <li>Mampu bekerja sama dalam tim.</li>
+            <li>Disiplin dan bertanggung jawab.</li>
+            <li>Tepat waktu.</li>
+            <li>Memiliki kemampuan dasar komputer.</li>
+        </ul>
+
+        <h3>Ekstrakurikuler</h3>
+        <p>Seni Tari (Anggota 2024 - 2025)</p>
+    </section>
+
+    <section id="kontak" class="isi">
+        <h2>Kontak Saya</h2>
+        <p>Email:
+            <a href="mailto:nanianggreyani5@gmail.com">
+            nanianggreyani5@gmail.com</a>
+        </p>
+
+        <p>Telepon:
+            <a href="tel:083163634124">
+            083163634124</a>
+        </p>
+
+        <p>Alamat: Pacing, Telukbunder</p>
+    </section>
+
+    <footer>
+        <p>©️ 2026 CV Nani Anggreyani</p>
+    </footer>
 
 </div>
+
+<script>
+    function buka(id) {
+        let bagian = document.querySelectorAll(".isi");
+
+        bagian.forEach(function(item) {
+            item.classList.remove("aktif");
+        });
+
+        document.getElementById(id).classList.add("aktif");
+    }
+
+    // Mengganti foto profil dengan cara diklik
+    document.getElementById("uploadFoto")
+    .addEventListener("change", function(event) {
+        let file = event.target.files[0];
+
+        if (file) {
+            document.getElementById("gambar").src =
+                URL.createObjectURL(file);
+        }
+    });
+</script>
+
 </body>
 </html>
