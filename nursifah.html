@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Nursifah</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #800020;
+    padding: 30px 15px;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #33000d;
+}
+
+header {
+    background: #4b0018;
+    color: white;
+    text-align: center;
+    padding: 35px;
+}
+
+header h1 {
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin-top: 10px;
+    color: #f5c6d0;
+}
+
+nav {
+    background: #650020;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: pink;
+}
+
+section {
+    padding: 30px;
+    border-bottom: 1px solid #ddd;
+    scroll-margin-top: 65px;
+}
+
+h2 {
+    color: #800020;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #800020;
+    padding-bottom: 10px;
+}
+
+.profil {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.profil img {
+    width: 190px;
+    height: 220px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 12px;
+    border: 5px solid #f1dce2;
+}
+
+.biodata {
+    line-height: 2;
+    flex: 1;
+}
+
+ul {
+    margin-left: 25px;
+    line-height: 2;
+}
+
+.keahlian span {
+    display: inline-block;
+    background: #f5e1e7;
+    color: #800020;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+.kontak {
+    line-height: 2;
+}
+
+button {
+    background: #800020;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #4b0018;
+}
+
+#pesan {
+    margin-top: 15px;
+    color: #800020;
+    font-weight: bold;
+}
+
+footer {
+    background: #4b0018;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media(max-width: 550px) {
+    .profil {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>NURSIFAH</h1>
+    <p>CURRICULUM VITAE</p>
+    <p>Pelajar | Disiplin | Bertanggung Jawab</p>
+</header>
+
+<nav>
+    <a href="#profil">Profil</a>
+    <a href="#pendidikan">Pendidikan</a>
+    <a href="#keahlian">Keahlian</a>
+    <a href="#kontak">Kontak</a>
+</nav>
+
+<section id="profil">
+    <h2>Profil Pribadi</h2>
+
+    <div class="profil">
+
+        <!-- FOTO PROFIL -->
+        <img src="IMG-20261113-WA0033.jpg"
+             alt="Foto Nursifah">
+
+        <div class="biodata">
+            <p><b>Nama:</b> Nursifah</p>
+            <p><b>Tempat, Tanggal Lahir:</b>
+            Karawang, 06 Juni 2009</p>
+            <p><b>Status:</b> Pelajar</p>
+            <p><b>Alamat:</b>
+            Dukuh Karya, Rengasdengklok, Karawang</p>
+
+            <p>
+            Saya adalah seorang pelajar yang memiliki
+            semangat belajar tinggi, disiplin,
+            bertanggung jawab dan ingin terus
+            mengembangkan kemampuan diri.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="pendidikan">
+    <h2>Riwayat Pendidikan</h2>
+
+    <ul>
+        <li>SD Dukuh Karya 3 (2015-2021)</li>
+        <li>SMPN 3 Rengasdengklok (2021-2024)</li>
+        <li>SMK (2024-Sekarang)</li>
+    </ul>
+</section>
+
+<section id="keahlian">
+    <h2>Keahlian</h2>
+
+    <div class="keahlian">
+        <span>Kerja Sama Tim</span>
+        <span>Komunikasi</span>
+        <span>Disiplin</span>
+        <span>Bertanggung Jawab</span>
+        <span>Dasar Komputer</span>
+    </div>
+</section>
+
+<section id="kontak">
+    <h2>Informasi Kontak</h2>
+
+    <div class="kontak">
+        <p>📍 Karawang, Jawa Barat</p>
+        <p>📞 085779339267</p>
+        <p>✉️ sifahnur941@gmail.com</p>
+    </div>
+
+    <button onclick="tampilkanPesan()">
+        Klik Saya
+    </button>
+
+    <p id="pesan"></p>
+</section>
+
+<footer>
+    <p>©️ 2026 CV Nursifah</p>
+    <p>Terima kasih telah mengunjungi CV saya</p>
+</footer>
+
+</div>
+
+<script>
+function tampilkanPesan() {
+    document.getElementById("pesan").innerHTML =
+    "Terima kasih telah mengunjungi CV saya!";
+}
+</script>
+
+</body>
+  </html>
