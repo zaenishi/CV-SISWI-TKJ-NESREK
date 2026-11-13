@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Putri Agra Pratama</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #3b2921;
+    color: #f5e8d8;
+}
+
+/* HEADER */
+header {
+    background: #241812;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #a67c52;
+}
+
+header h1 {
+    color: #dfb98b;
+    letter-spacing: 3px;
+    font-size: 28px;
+}
+
+header p {
+    color: #d6c0a5;
+    margin-top: 5px;
+}
+
+/* NAVIGATION */
+nav {
+    background: #51392c;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff0dc;
+    padding: 10px 16px;
+    border-radius: 20px;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+nav a:hover,
+nav a.active {
+    background: #c49a6c;
+    color: #241812;
+}
+
+/* MAIN */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 35px auto;
+}
+
+/* PROFILE */
+.profile {
+    background: #604737;
+    padding: 35px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    box-shadow: 0 8px 20px #1d120d80;
+    flex-wrap: wrap;
+}
+
+.profile img {
+    width: 190px;
+    height: 230px;
+    object-fit: cover;
+    object-position: center top;
+    border: 5px solid #d3ad80;
+    border-radius: 15px;
+}
+
+.profile-info h2 {
+    font-size: 30px;
+    color: #f2d2a8;
+    margin-bottom: 10px;
+}
+
+.profile-info h3 {
+    color: #d8b58c;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.profile-info p {
+    line-height: 1.8;
+}
+
+/* SECTION */
+section {
+    background: #604737;
+    padding: 30px;
+    margin-top: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px #1d120d70;
+    display: none;
+    animation: muncul 0.5s ease;
+}
+
+section.show {
+    display: block;
+}
+
+section h2 {
+    color: #f0c99c;
+    border-bottom: 2px solid #c49a6c;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+section p {
+    line-height: 1.8;
+}
+
+.item {
+    background: #493328;
+    padding: 17px;
+    border-left: 4px solid #d3ad80;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.item h3 {
+    color: #f1c99b;
+    margin-bottom: 5px;
+}
+
+.item span {
+    color: #d6b995;
+    font-size: 14px;
+}
+
+ul {
+    padding-left: 22px;
+    line-height: 2;
+}
+
+/* BUTTON */
+button {
+    background: #c49a6c;
+    color: #241812;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #f0d2aa;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #241812;
+    color: #d6b995;
+    margin-top: 40px;
+}
+
+/* ANIMATION */
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:600px) {
+    .profile {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .profile-info h2 {
+        font-size: 24px;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>CURRICULUM VITAE</h1>
+    <p>Personal Portfolio | Brown Elegant Theme</p>
+</header>
+
+<nav>
+    <a href="#" class="active" onclick="buka('profil',this)">Profil</a>
+    <a href="#" onclick="buka('pendidikan',this)">Pendidikan</a>
+    <a href="#" onclick="buka('organisasi',this)">Organisasi</a>
+    <a href="#" onclick="buka('pengalaman',this)">Pengalaman PKL</a>
+    <a href="#" onclick="buka('sertifikat',this)">Sertifikat</a>
+</nav>
+
+<div class="container">
+
+<!-- PROFIL -->
+<div class="profile">
+    <img src="IMG_5816.JPG.jpeg" alt="Foto Putri Agra Pratama">
+
+    <div class="profile-info">
+        <h2>PUTRI AGRA PRATAMA</h2>
+        <h3>PELAJAR</h3>
+        <p>
+            SMKN 1 RENGASDENGKLOK
+        </p>
+        <p>
+            Saya merupakan seorang pelajar yang memiliki
+            semangat belajar, bertanggung jawab, disiplin,
+            serta mampu bekerja sama dalam tim.
+        </p>
+
+        <button onclick="buka('pendidikan',
+        document.querySelectorAll('nav a')[1])">
+            Lihat Selengkapnya
+        </button>
+    </div>
+</div>
+
+<!-- PENDIDIKAN -->
+<section id="pendidikan">
+    <h2>Riwayat Pendidikan</h2>
+
+    <div class="item">
+        <h3>SDN Rengasdengklok Selatan II</h3>
+        <span>2015 - 2021</span>
+    </div>
+
+    <div class="item">
+        <h3>SMPN 1 Rengasdengklok</h3>
+        <span>2021 - 2024</span>
+    </div>
+
+    <div class="item">
+        <h3>SMKN 1 Rengasdengklok</h3>
+        <span>2024 - 2027</span>
+    </div>
+</section>
+
+<!-- ORGANISASI -->
+<section id="organisasi">
+    <h2>Pengalaman Organisasi</h2>
+
+    <div class="item">
+        <h3>BADMINTON</h3>
+        <p>Jabatan: Anggota</p>
+        <span>2022 - 2024</span>
+    </div>
+
+    <div class="item">
+        <h3>PALANG MERAH REMAJA</h3>
+        <p>Jabatan: Hubungan Masyarakat</p>
+        <span>2024 - 2025</span>
+    </div>
+</section>
+
+<!-- PENGALAMAN PKL -->
+<section id="pengalaman">
+    <h2>Pengalaman PKL</h2>
+
+    <div class="item">
+        <h3>PT BUMJIN ELECTRONICS INDONESIA</h3>
+        <p>Bagian: Automotive</p>
+
+        <p><b>Tugas dan Tanggung Jawab:</b></p>
+        <ul>
+            <li>Memasang padfoam ke pad</li>
+            <li>Menginput Holder</li>
+            <li>Insert PCB</li>
+            <li>Assy Stand</li>
+            <li>Assy Chassis Front P</li>
+        </ul>
+    </div>
+</section>
+
+<!-- SERTIFIKAT -->
+<section id="sertifikat">
+    <h2>Sertifikat dan Prestasi</h2>
+
+    <div class="item">
+        <h3>JUMBARA PMR</h3>
+        <p>Juara Grade A4</p>
+        <span>06 - 09 November 2024</span>
+    </div>
+
+    <div class="item">
+        <h3>Ruang Menyala FIF GROUP</h3>
+        <p>Sertifikat</p>
+        <span>4 Juli 2026</span>
+    </div>
+
+    <div class="item">
+        <h3>Pemrograman Paham AI</h3>
+        <p>Sertifikat</p>
+        <span>2 September 2026</span>
+    </div>
+</section>
+
+</div>
+
+<footer>
+    <p>©️ 2026 PUTRI AGRA PRATAMA</p>
+    <p>Curriculum Vitae | Personal Portfolio</p>
+</footer>
+
+<script>
+function buka(id, tombol) {
+
+    // Menyembunyikan semua bagian
+    document.querySelectorAll("section").forEach(function(bagian) {
+        bagian.classList.remove("show");
+    });
+
+    // Menampilkan bagian yang dipilih
+    document.getElementById(id).classList.add("show");
+
+    // Menghapus warna aktif dari semua menu
+    document.querySelectorAll("nav a").forEach(function(menu) {
+        menu.classList.remove("active");
+    });
+
+    // Memberikan warna aktif pada menu yang diklik
+    tombol.classList.add("active");
+
+    // Scroll ke bagian yang dipilih
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+// Profil tampil pertama kali
+document.getElementById("profil")?.classList.add("show");
+</script>
+
+</body>
+</html>
