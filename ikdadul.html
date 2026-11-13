@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Putri Agra Pratama</title>s
+
+<style>
+:root {
+  --ink: #252a31;
+  --muted: #69717c;
+  --accent: #536879;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #d9dde1;
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* NAVIGASI */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #f7f8f9;
+  border-bottom: 1px solid #cbd0d5;
+}
+
+.nav {
+  max-width: 1080px;
+  margin: auto;
+  padding: 12px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+nav a, .action {
+  border: 0;
+  text-decoration: none;
+  color: #37414a;
+  background: #e8ebee;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+nav a:hover, .action:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* LAYOUT */
+.wrap {
+  max-width: 1080px;
+  margin: 34px auto;
+  padding: 0 20px 40px;
+}
+
+.sheet {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 55px #26323d20;
+}
+
+/* PROFIL */
+.hero {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 330px;
+  background: #eef0f2;
+}
+
+.photo-side {
+  background: #cbd1d6;
+  padding: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-photo {
+  width: 205px;
+  height: 245px;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: 12px;
+  border: 7px solid white;
+  box-shadow: 0 10px 25px #20283026;
+}
+
+.hero-copy {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.kicker {
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.08;
+  margin: 0;
+  color: #222a31;
+}
+
+.role {
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: bold;
+  margin: 12px 0 16px;
+}
+
+.intro {
+  max-width: 620px;
+  color: #515b65;
+}
+
+/* ISI CV */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+}
+
+.sidebar {
+  background: #f4f5f6;
+  padding: 34px 30px;
+}
+
+.main {
+  padding: 34px 40px;
+}
+
+section {
+  scroll-margin-top: 90px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+h2:after {
+  content: "";
+  height: 1px;
+  background: #d9dee2;
+  flex: 1;
+}
+
+.contact-item {
+  font-size: 13px;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.contact-item strong {
+  display: block;
+  color: #303943;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.item {
+  padding: 0 0 17px 17px;
+  border-left: 2px solid #cbd3da;
+  position: relative;
+  margin-left: 5px;
+}
+
+.item:before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  background: #718696;
+  border-radius: 50%;
+}
+
+.item h3 {
+  font-size: 14px;
+  margin: 0 0 3px;
+}
+
+.meta {
+  font-size: 12px;
+  color: #7b858e;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  color: #515b65;
+  font-size: 13px;
+}
+
+li {
+  margin: 4px 0;
+}
+
+.tag {
+  display: inline-block;
+  background: #e5e9ec;
+  color: var(--accent);
+  border-radius: 5px;
+  padding: 5px 9px;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 3px;
+}
+
+footer {
+  text-align: center;
+  color: #66717b;
+  font-size: 11px;
+  padding: 18px;
+}
+
+/* RESPONSIVE */
+@media(max-width:720px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-side {
+    padding: 25px;
+  }
+
+  .profile-photo {
+    width: 170px;
+    height: 200px;
+  }
+
+  .hero-copy {
+    padding: 28px 25px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar, .main {
+    padding: 28px 25px;
+  }
+}
+
+/* CETAK PDF */
+@media print {
+  body {
+    background: white;
+  }
+
+  .topbar {
+    display: none;
+  }
+
+  .wrap {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sheet {
+    box-shadow: none;
+  }
+
+  section {
+    break-inside: avoid;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="nav">
+
+    <div class="brand">
+      PORTOFOLIO / CURRICULUM VITAE
+    </div>
+
+    <nav>
+      <a href="#profil">Profil</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#sertifikat">Sertifikat</a>
+    </nav>
+
+    <button class="action" onclick="window.print()">
+      Cetak / Simpan PDF
+    </button>
+
+  </div>
+</header>
+
+<div class="wrap">
+
+<article class="sheet">
+
+  <!-- PROFIL DAN FOTO -->
+  <div class="hero" id="profil">
+
+    <div class="photo-side">
+
+      <img
+        class="profile-photo"
+        src="data:image/jpeg;base64,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"
+        alt="Foto profil Putri Agra Pratama">
+
+    </div>
+
+    <div class="hero-copy">
+
+      <p class="kicker">CURRICULUM VITAE</p>
+
+      <h1>
+        IKDATUL<br>PARIDA
+      </h1>
+
+      <p class="role">
+        PELAJAR · SMKN 1 RENGASDENGKLOK
+      </p>
+
+      <p class="intro">
+        Pelajar yang memiliki semangat untuk belajar,
+        mengembangkan kemampuan, dan memperoleh
+        pengalaman baru. Memiliki pengalaman kegiatan
+        organisasi serta praktik kerja lapangan
+      </p>
+
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- BAGIAN SAMPING -->
+    <aside class="sidebar">
+
+      <section>
+        <h2>Data Diri</h2>
+
+        <div class="contact-item">
+          <strong>Status</strong>
+          Pelajar
+        </div>
+
+        <div class="contact-item">
+          <strong>Tempat, Tanggal Lahir</strong>
+          Karawang, 03 Oktober 2008
+        </div>
+
+        <div class="contact-item">
+          <strong>Hobi</strong>
+          Membaca
+        </div>
+
+        <div class="contact-item">
+          <strong>Alamat</strong>
+          Kedungmundu RT 07 RW 02,
+          Desa Kutakarya,
+          Kecamatan Kutawaluya,
+          Kabupaten Karawang
+        </div>
+      </section>
+
+      <section>
+        <h2>Minat</h2>
+
+        <span class="tag">Membaca</span>
+        <span class="tag">Belajar hal baru</span>
+      </section>
+
+      <section>
+        <h2>Organisasi</h2>
+
+        <div class="item">
+          <h3>Paskibra</h3>
+          <div class="meta">
+            Anggota · 2024
+          </div>
+        </div>
+
+      </section>
+
+    </aside>
+
+    <!-- BAGIAN UTAMA -->
+    <main class="main">
+
+      <section id="pendidikan">
+
+        <h2>Riwayat Pendidikan</h2>
+
+        <div class="item">
+          <h3>SMKN 1 Rengasdengklok</h3>
+          <div class="meta">2024–2027 · SMK</div>
+        </div>
+
+        <div class="item">
+          <h3>SMPN 1 Kutawaluya</h3>
+          <div class="meta">2021–2024 · Lulus</div>
+        </div>
+
+        <div class="item">
+          <h3>SDN 1 Kutakarya</h3>
+          <div class="meta">2015–2021 · Lulus</div>
+        </div>
+
+      </section>
+
+      <section id="pengalaman">
+
+        <h2>Pengalaman PKL</h2>
+
+        <div class="item">
+
+          <h3>Pemda Karawang</h3>
+
+          <div class="meta">
+            Praktik Kerja Lapangan · Bagian staff magang
+          </div>
+
+          <ul>
+            <li>mendata.</li>
+            <li>Menginput.</li>
+            <li>Printout.</li>
+          </ul>
+
+        </div>
+
+      </section>
+
+      <section id="sertifikat">
+
+        <h2>Sertifikat & Prestasi</h2>
+
+        <div class="item">
+          <h3>Ruang Menyala FIF GROUP</h3>
+          <div class="meta">
+            Sertifikat · 4 Juli 2026
+          </div>
+        </div>
+
+        <div class="item">
+          <h3>Pemrograman Paham AI</h3>
+          <div class="meta">
+            Sertifikat · 2 September 2026
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    CURRICULUM VITAE · IKDATUL PARIDA
+  </footer>
+
+</article>
+</div>
+
+</body>
+</html>
